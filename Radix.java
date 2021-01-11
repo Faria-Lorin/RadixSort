@@ -1,10 +1,7 @@
 public class Radix{
   public static int nth(int n, int col){
     int rem = n%((int)(Math.pow(10, col +1)));
-    if (col == 0){
-
-    }
-    else {
+    if (col !=0){
       rem = rem - rem%((int)(Math.pow(10, col)));
     }
     rem = rem / ((int)(Math.pow(10, col)));
