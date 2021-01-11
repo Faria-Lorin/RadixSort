@@ -9,8 +9,8 @@ public class Radix{
   }
 
   public static int length(int n){
-    int len = (int)Math.log(Math.abs(n));
-    return len;
+    int len = (int)(Math.log10(n));
+    return len + 1;
   }
   public static void main(String[] args) {
     System.out.println(nth(Integer.parseInt(args[0]),Integer.parseInt(args[1])));
