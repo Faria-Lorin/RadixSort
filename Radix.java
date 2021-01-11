@@ -9,7 +9,7 @@ public class Radix{
   }
 
   public static int length(int n){
-    int len = (int)(Math.log10(n));
+    int len = (int)(Math.log10(Math.abs(n)));
     return len + 1;
   }
   public static void main(String[] args) {
