@@ -36,9 +36,8 @@ public class Radix{
         digit = nth(data.get(j), i);
         buckets[digit].add(data.get(j));
       }
-    }
-
       clearData.extend(data);
       merge(data, buckets);
+    }
   }
 }
