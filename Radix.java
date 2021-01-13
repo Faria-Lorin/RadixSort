@@ -70,19 +70,4 @@ public class Radix{
     data.extend(Positives);
   }
 
-  public static void main(String[] args) {
-
-        SortableLinkedList Data = new SortableLinkedList();
-        Data.add(-9);
-        Data.add(9);
-        Data.add(0);
-        Data.add(-8);
-        Data.add(-6);
-        Data.add(89);
-        Data.add(59);
-        Data.add(-89);
-        Data.add(-39);
-        radixSort(Data);
-        System.out.println(Data.toString());
-  }
 }
