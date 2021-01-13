@@ -40,4 +40,39 @@ public class Radix{
       merge(data, buckets);
     }
   }
+
+  public static void radixSort(SortableLinkedList data){
+    SortableLinkedList clearData = new SortableLinkedList();
+    SortableLinkedList Negatives = new SortableLinkedList();
+    SortableLinkedList Positives = new SortableLinkedList();
+    for (int i = 0; i < data.size(); i++){
+      if (data.get(i) > 0){
+        Positives.add(data.get(i));
+      }
+      else {
+        Negatives.add(data.get(i));
+      }
+    }
+    radixSortSimple(Positives);
+    radixSortSimple(Negatives);
+    clearData.extend(data);
+    data.extend(Negatives);
+    data.extend(Positives);
+  }
+  public static void main(String[] args) {
+    SortableLinkedList data = new SortableLinkedList();
+    data.add(-9);
+    data.add(-11);
+    data.add(17);
+    data.add(27);
+    data.add(7);
+    data.add(0);
+    data.add(-19);
+    data.add(0);
+    data.add(-7);
+    radixSortSimple(data);
+    System.out.println(data.toString());
+    radixSort(data);
+    System.out.println(data.toString());
+  }
 }
