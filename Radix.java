@@ -44,7 +44,7 @@ public class Radix{
     radixSortSimple(data);
     SortableLinkedList clearData = new SortableLinkedList();
     SortableLinkedList newData = new SortableLinkedList();
-    for (int i = data.size() -1; i > 0; i--){
+    for (int i = data.size() -1; i >= 0; i--){
       newData.add(data.get(i));
     }
     clearData.extend(data);
@@ -68,5 +68,21 @@ public class Radix{
     clearData.extend(data);
     data.extend(Negatives);
     data.extend(Positives);
+  }
+
+  public static void main(String[] args) {
+
+        SortableLinkedList Data = new SortableLinkedList();
+        Data.add(-9);
+        Data.add(9);
+        Data.add(0);
+        Data.add(-8);
+        Data.add(-6);
+        Data.add(89);
+        Data.add(59);
+        Data.add(-89);
+        Data.add(-39);
+        radixSort(Data);
+        System.out.println(Data.toString());
   }
 }
