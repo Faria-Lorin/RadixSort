@@ -46,7 +46,7 @@ public class Radix{
     SortableLinkedList Negatives = new SortableLinkedList();
     SortableLinkedList Positives = new SortableLinkedList();
     for (int i = 0; i < data.size(); i++){
-      if (data.get(i) > 0){
+      if (data.get(i) >= 0){
         Positives.add(data.get(i));
       }
       else {
