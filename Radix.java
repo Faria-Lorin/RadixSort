@@ -12,8 +12,9 @@ public class Radix{
     int len = (int)(Math.log10(Math.abs(n)));
     return len + 1;
   }
-  public static void main(String[] args) {
-    System.out.println(nth(Integer.parseInt(args[0]),Integer.parseInt(args[1])));
-    System.out.println(length(Integer.parseInt(args[0])));
+  public static void merge(MyLinkedList original,MyLinkedList[]buckets){
+    for (int i = 0; i < buckets.length; i++){
+      original.extend(buckets[i]);
+    }
   }
 }
