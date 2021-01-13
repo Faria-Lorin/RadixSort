@@ -69,14 +69,4 @@ public class Radix{
     data.extend(Negatives);
     data.extend(Positives);
   }
-  public static void main(String[] args) {
-    SortableLinkedList data = new SortableLinkedList();
-    data.add(-9);
-    data.add(-11);
-    data.add(-19);
-    data.add(-7);
-    radixSortSimpleNeg(data);
-    System.out.println(data.toString());
-
-  }
 }
