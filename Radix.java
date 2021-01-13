@@ -40,6 +40,16 @@ public class Radix{
       merge(data, buckets);
     }
   }
+  public static void radixSortSimpleNeg(SortableLinkedList data){
+    radixSortSimple(data);
+    SortableLinkedList clearData = new SortableLinkedList();
+    SortableLinkedList newData = new SortableLinkedList();
+    for (int i = data.size() -1; i > 0; i--){
+      newData.add(data.get(i));
+    }
+    clearData.extend(data);
+    data.extend(newData);
+  }
 
   public static void radixSort(SortableLinkedList data){
     SortableLinkedList clearData = new SortableLinkedList();
@@ -54,7 +64,7 @@ public class Radix{
       }
     }
     radixSortSimple(Positives);
-    radixSortSimple(Negatives);
+    radixSortSimpleNeg(Negatives);
     clearData.extend(data);
     data.extend(Negatives);
     data.extend(Positives);
@@ -63,16 +73,10 @@ public class Radix{
     SortableLinkedList data = new SortableLinkedList();
     data.add(-9);
     data.add(-11);
-    data.add(17);
-    data.add(27);
-    data.add(7);
-    data.add(0);
     data.add(-19);
-    data.add(0);
     data.add(-7);
-    radixSortSimple(data);
+    radixSortSimpleNeg(data);
     System.out.println(data.toString());
-    radixSort(data);
-    System.out.println(data.toString());
+
   }
 }
