@@ -33,7 +33,7 @@ public class Radix{
     }
     for (int i = 0; i < mostDigits; i++){
       for (int j = 0; j < data.size(); j++){
-        digit = nth(data.get(j), i);
+        digit = nth(data.remove(j), i);
         buckets[digit].add(data.get(j));
       }
       clearData.extend(data);
