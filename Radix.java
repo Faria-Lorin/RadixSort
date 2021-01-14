@@ -58,12 +58,14 @@ public class Radix{
     SortableLinkedList clearData = new SortableLinkedList();
     SortableLinkedList Negatives = new SortableLinkedList();
     SortableLinkedList Positives = new SortableLinkedList();
-    for (int i = 0; i < data.size(); i++){
-      if (data.get(i) >= 0){
-        Positives.add(data.get(i));
+    int num = 0;
+    for (int i = 0; i < data.size();){
+      num = data.remove(i);
+      if (num >= 0){
+        Positives.add(num);
       }
       else {
-        Negatives.add(data.get(i));
+        Negatives.add(num);
       }
     }
     radixSortSimple(Positives);
