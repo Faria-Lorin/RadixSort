@@ -48,11 +48,12 @@ public class Radix{
     SortableLinkedList clearData = new SortableLinkedList();
     SortableLinkedList newData = new SortableLinkedList();
     for (int i = data.size() -1; i >= 0; i--){
-      newData.add(data.get(i));
+      newData.add(data.remove(i));
     }
     clearData.extend(data);
     data.extend(newData);
   }
+
   public static void radixSort(SortableLinkedList data){
     SortableLinkedList clearData = new SortableLinkedList();
     SortableLinkedList Negatives = new SortableLinkedList();
