@@ -22,21 +22,20 @@ public class Radix{
   public static void radixSortSimple(SortableLinkedList data){
     int num = 0;
     int digit = 0;
-    int mostDigits = 0;
+    int mostDigits = 1;
     SortableLinkedList temp = new SortableLinkedList();
     SortableLinkedList[] buckets = new SortableLinkedList[10];
     for (int i = 0; i < 10; i++){
       SortableLinkedList boxes = new SortableLinkedList();
       buckets[i] = boxes;
     }
-    for (int i = 0; i < data.size(); i++){
-      if (length(data.get(i)) > mostDigits){
-        mostDigits = length(data.get(i));
-      }
-    }
+
     for (int i = 0; i < mostDigits; i++){
       for (int j = 0; j < data.size();){
         num = data.remove(j);
+        if (i == 0 && length(num) > mostDigits){
+          mostDigits = length(num);
+        }
         digit = nth(num, i);
         buckets[digit].add(num);
       }
